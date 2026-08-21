@@ -66,7 +66,7 @@ private sealed class Screen {
 }
 
 @Composable
-fun KitApp(store: KitStore, initialScreen: Screen = Screen.Decks) {
+private fun KitApp(store: KitStore, initialScreen: Screen = Screen.Decks) {
     var epoch by remember { mutableIntStateOf(0) }
     val systemDark = (LocalContext.current.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
     val dark = when(store.appearance){ Appearance.SYSTEM -> systemDark; Appearance.LIGHT -> false; Appearance.DARK -> true }
